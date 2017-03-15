@@ -18,4 +18,10 @@ class Board
 		ttt_board.count("") == 0
 	end
 
+	def board_win?(marker)
+		ttt_board[0] == marker && ttt_board[1] && ttt_board[2] == "x"
+	end
+
+
+
 end
