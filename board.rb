@@ -6,7 +6,9 @@ class Board
 	
 	end
 
-
+	def update_board(position,marker)
+		@ttt_board[position] = marker
+	end
 
 
 
