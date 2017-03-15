@@ -10,6 +10,8 @@ class Board
 		@ttt_board[position] = marker
 	end
 
-
+	def open_space?(position)
+		ttt_board[position] == ""
+	end
 
 end
