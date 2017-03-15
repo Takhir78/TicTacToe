@@ -29,4 +29,22 @@ class TestBoard < Minitest::Test
 		assert_equal(["x","","","","","","","x","o"], board.ttt_board)
 	end
 
+	def test_update_board_3
+		board = Board.new
+		board.update_board(0, "x")
+		board.update_board(8, "o")
+		board.update_board(7, "x")
+		board.update_board(6, "o")
+		assert_equal(["x","","","","","","o","x","o"], board.ttt_board)
+	end
+
+	def test_update_the_6th_position_return_x
+		board = Board.new
+		board.ttt_board = ["x","","","","","","o","x","o"]
+		board.update_board(5, "x")
+		assert_equal(["x","","","","","x","o","x","o"], board.ttt_board)
+	end
+
+
+
 end
