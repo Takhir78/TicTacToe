@@ -15,7 +15,7 @@ class Board
 	end
 
 	def full_board?()
-		ttt_board.include? ("") 
+		ttt_board.count("") == 0
 	end
 
 end

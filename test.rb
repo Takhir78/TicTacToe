@@ -65,10 +65,14 @@ class TestBoard < Minitest::Test
 	end
 	def test_full_board
 		board = Board.new
-		board.ttt_board = ["x","o","o","o","o","x","o","x",""]
+		board.ttt_board = ["x","o","o","o","o","x","o","x","o"]
 		assert_equal(true,board.full_board?())
 	end
 
-
+	def test_full_board_2
+		board = Board.new
+		board.ttt_board = ["x","o","o","o","o","x","o","x",""]
+		assert_equal(false,board.full_board?())
+	end
 
 end
