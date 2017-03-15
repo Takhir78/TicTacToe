@@ -47,9 +47,28 @@ class TestBoard < Minitest::Test
 
 	def test_open_space
 		board = Board.new
-		board.ttt_board = ["x","","","","","x","o","x","o"]
+		board.ttt_board = ["x","o","","","","x","o","x","o"]
 		# board.update_board(5, "x")
 		assert_equal(true,board.open_space?(3))
 	end
+
+	def test_open_space_2
+		board = Board.new
+		board.ttt_board = ["x","o","","","","x","o","x","o"]
+		assert_equal(true,board.open_space?(2))
+	end
+
+	def test_open_space_3
+		board = Board.new
+		board.ttt_board = ["x","o","","","","x","o","x","o"]
+		assert_equal(false,board.open_space?(55))
+	end
+	def test_full_board
+		board = Board.new
+		board.ttt_board = ["x","o","o","o","o","x","o","x",""]
+		assert_equal(true,board.full_board?())
+	end
+
+
 
 end

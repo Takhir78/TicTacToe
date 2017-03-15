@@ -14,4 +14,8 @@ class Board
 		ttt_board[position] == ""
 	end
 
+	def full_board?()
+		ttt_board.include? ("") 
+	end
+
 end
