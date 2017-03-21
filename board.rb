@@ -29,7 +29,13 @@ class Board
 		@ttt_board[2] == marker && @ttt_board[5] == marker && @ttt_board[8] == marker
 	end
 
-	
+	def input?(user_input)
+		if user_input =~ /^-?[0-9]+$/ && user_input.to_i < 9
+			true
+		else false
+		end
+	end
 
-	
+
+
 end

@@ -104,12 +104,22 @@ class TestBoard < Minitest::Test
 	end
 
 	def test_for_valid_user_input_1
+		board = Board.new
 		user_input = "1"
-		assert_equal(true,input?(user_input))
+		assert_equal(true,board.input?(user_input))
 	end
-	
 
+	def test_for_invalid_user_input_10
+		board = Board.new
+		user_input = "10"
+		assert_equal(false,board.input?(user_input))
+	end
 
+	def test_for_invalid_user_input_R
+		board = Board.new
+		user_input = "R"
+		assert_equal(false,board.input?(user_input))
+	end
 
 
 end
