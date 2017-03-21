@@ -82,7 +82,26 @@ class TestBoard < Minitest::Test
 		assert_equal(true,board.board_win?(marker))
 	end
 
+	def test_win_return_false_when_pass_nonwinning_board
+		board = Board.new
+		board.ttt_board = ["","x","x","x","","","","",""]
+		marker = "x"
+		assert_equal(false,board.board_win?(marker))
+	end
 
+	def test_win_diagonal_return_true
+		board = Board.new
+		board.ttt_board = ["x","","","","x","","","","x"]
+		marker = "x"
+		assert_equal(true,board.board_win?(marker))
+	end
 
+	def test_win_diagonal_with_o_in_4_position_return_false
+		board = Board.new
+		board.ttt_board = ["x","","","","0","","","","x"]
+		marker = "x"
+		assert_equal(false,board.board_win?(marker))
+	end
 
 end
+
