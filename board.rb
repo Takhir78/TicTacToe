@@ -29,7 +29,7 @@ class Board
 		@ttt_board[2] == marker && @ttt_board[5] == marker && @ttt_board[8] == marker
 	end
 
-
+	
 
 	
 end

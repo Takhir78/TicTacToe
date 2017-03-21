@@ -103,5 +103,14 @@ class TestBoard < Minitest::Test
 		assert_equal(false,board.board_win?(marker))
 	end
 
+	def test_for_valid_user_input_1
+		user_input = "1"
+		assert_equal(true,input?(user_input))
+	end
+	
+
+
+
+
 end
 
