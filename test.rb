@@ -96,6 +96,13 @@ class TestBoard < Minitest::Test
 		assert_equal(true,board.board_win?(marker))
 	end
 
+	def test_win_diagonal_2_to_6_return_true
+		board = Board.new
+		board.ttt_board = ["","","x","","x","","x","",""]
+		marker = "x"
+		assert_equal(true,board.board_win?(marker))
+	end
+
 	def test_win_diagonal_with_o_in_4_position_return_false
 		board = Board.new
 		board.ttt_board = ["x","","","","0","","","","x"]
