@@ -7,7 +7,7 @@ class HumanConsole
 
 	def get_move(board)
 		puts "Pick a space"
-		# move = gets.chomp.to.i
+		move = gets.chomp.to.i
 
 	end
 
