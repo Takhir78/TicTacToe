@@ -12,14 +12,21 @@ class Console
 
 	end
 
+  def get_board
+    return @board
+  end
+
+
+  def isTheGameDone(marker)
+     return @board.board_win?(marker)
+  end
+
 	def display_board
         puts """ 
        #{board.ttt_board[0]} | #{board.ttt_board[1]} | #{board.ttt_board[2]}
-
        ______
 
        #{board.ttt_board[3]} | #{board.ttt_board[4]} | #{board.ttt_board[5]}
-
        ______
 
        #{board.ttt_board[6]} | #{board.ttt_board[7]} | #{board.ttt_board[8]}
@@ -28,8 +35,12 @@ class Console
     end
 
     def get_move
-    	current_player.get_move(board.ttt_board)
+    	current_player.get_move(@board, @current_player)
     end
 
-
+    def get_move(player)
+      puts "Pick a space Mr/Mrs #{player.get_marker}"
+      position = gets.chomp.to_i
+      @board.update_board(position, player.get_marker)
+    end
 end
