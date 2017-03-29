@@ -4,16 +4,19 @@ player_1 = HumanConsole.new("x")
 player_2 = HumanConsole.new("o")
 console = Console.new(player_1, player_2)
 console.display_board
-condition_to_stop=true
+condition_to_stop=false
 
 
-while(condition_to_stop)
+while(!condition_to_stop)
+  puts "condition_to_stop value : #{condition_to_stop}"
   move = console.get_move(player_1)
   console.display_board
   condition_to_stop = console.isTheGameDone(player_1.get_marker)
+  puts "condition_to_stop value : #{condition_to_stop}"
   move = console.get_move(player_2)
   console.display_board
   condition_to_stop = console.isTheGameDone(player_2.get_marker)
+  puts "condition_to_stop value : #{condition_to_stop}"
 end
 
 # # puts move
