@@ -39,7 +39,7 @@ class Console
     end
 
     def get_move(player)
-      puts "Pick a space Mr/Mrs #{player.get_marker}"
+      puts "Pick a space #{player.get_marker}"
       position = gets.chomp.to_i
       @board.update_board(position, player.get_marker)
     end
