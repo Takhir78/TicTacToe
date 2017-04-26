@@ -6,25 +6,18 @@ require "sinatra"
 
 get'/' do
 
-	erb :tictactoe 	
+	erb :test
+	
 end
 
 post '/players' do
 
-	player_1 = params[:player_1]
-	player_2 = params[:player_2]
-"player1 is #{player_1} & player2 is #{player_2}"
-
-redirect '/get_move'
+	player_1=params[:player_1]
+	player_2=params[:player_2]
+"player1 is '#{player_1}' & player2 is '#{player_2}'"
 
 end
 
-get '/get_move' do
-
-	erb :first_board
-
+get '/test' do
+	"this is just a test"
 end
-
-
-
-
